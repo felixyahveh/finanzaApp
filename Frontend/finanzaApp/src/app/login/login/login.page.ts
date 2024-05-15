@@ -28,7 +28,7 @@ export class LoginPage implements OnInit {
   logIn(){
     this.usuarioService.logIn(this.user).subscribe(res => {
       localStorage.setItem('token',res.token)
-      this.router.navigate(['app','tabs','tab1'])
+      this.router.navigate(['app','tabs','ingresos'])
 
     }, err => {
       this.alert.mostrarMensaje('Error al iniciar sesión','El usuario o la contraseña propocionada son incorrectas')

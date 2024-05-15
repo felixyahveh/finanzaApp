@@ -10,7 +10,6 @@ const routes: Routes = [
   },
   {
     path: 'app',
-    component: TabsPage,
     loadChildren: () => import('./application/tabs/tabs.module').then(m => m.TabsPageModule)
   },
   { 
