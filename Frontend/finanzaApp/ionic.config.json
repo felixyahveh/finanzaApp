@@ -1,7 +1,0 @@
-{
-  "name": "finanzaApp",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular-standalone"
-}
