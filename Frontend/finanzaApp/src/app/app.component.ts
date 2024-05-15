@@ -11,6 +11,6 @@ export class AppComponent {
   constructor(private usuariosService:UsuariosService) {}
 
   ngOnInit(){
-    this.usuariosService.obtenerUsuarios().subscribe(res => console.log(res))
+    
   }
 }

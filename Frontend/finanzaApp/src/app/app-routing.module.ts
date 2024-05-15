@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginPage } from './login/login/login.page';
+import { TabsPage } from './application/tabs/tabs.page';
 
 const routes: Routes = [
   {
@@ -9,6 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'app',
+    component: TabsPage,
     loadChildren: () => import('./application/tabs/tabs.module').then(m => m.TabsPageModule)
   },
   { 

@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CustomHttpInterceptor } from 'src/services/http-interceptor';
 import { LoginModule } from './login/login.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +17,7 @@ import { LoginModule } from './login/login.module';
             IonicModule.forRoot(), 
             AppRoutingModule,
             HttpClientModule,
+            FormsModule,
           LoginModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
                 {
