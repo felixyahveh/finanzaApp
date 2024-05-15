@@ -29,7 +29,7 @@ export class IngresosFormularioComponent  implements OnInit {
     console.log(this.ingreso)
     if(this.action == 'Agregar'){
       this.agregar();
-    }else if(this.action == 'Modificar'){
+    }else if(this.action == 'Editar'){
       this.modificar();
     }
   }
@@ -39,13 +39,17 @@ export class IngresosFormularioComponent  implements OnInit {
       this.cerrarModal();
       this.alert.mostrarMensaje('Guardado exitosamente','Se ha guardado el ingreso exitosamente')
     }, err => {
-      console.log(err)
-      /* this.alert.mostrarMensaje('Error','Ocurrio un error durante el proceso, intenetelo nuevamente') */
+      this.alert.mostrarMensaje('Error','Ocurrio un error durante el proceso, intenetelo nuevamente')
     })
   }
 
   modificar(){
-
+    this.ingresosService.editarIngreso(this.ingreso).subscribe(res => {
+      this.cerrarModal();
+      this.alert.mostrarMensaje('Guardado exitosamente','Se ha guardado el ingreso exitosamente')
+    }, err => {
+      this.alert.mostrarMensaje('Error','Ocurrio un error durante el proceso, intenetelo nuevamente')
+    })
   }
 
   cerrarModal(){

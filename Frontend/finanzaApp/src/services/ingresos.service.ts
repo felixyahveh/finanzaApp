@@ -18,4 +18,12 @@ export class IngresosService {
   public guardarIngreso(ingreso:ingresosDTO):Observable<any>{
     return this.http.post<any>(this.dataUrl,ingreso)
   }
+
+  public editarIngreso(ingreso:ingresosDTO):Observable<any>{
+    return this.http.put<any>(this.dataUrl+ingreso.id+'/',ingreso)
+  }
+
+  public eliminarIngreso(id:number):Observable<any>{
+    return this.http.delete<any>(this.dataUrl+id+'/')
+  }
 }

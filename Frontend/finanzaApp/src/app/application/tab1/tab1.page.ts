@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, AlertController } from '@ionic/angular';
 import { ingresosDTO } from 'src/models/ingresos-dto';
 import { IngresosService } from 'src/services/ingresos.service';
 import { IngresosFormularioComponent } from './ingresos-formulario/ingresos-formulario.component';
+import { AlertService } from '../../../services/alert.service';
 
 @Component({
   selector: 'app-tab1',
@@ -13,7 +14,8 @@ export class Tab1Page {
   protected ingresos:ingresosDTO[] = [];
 
   constructor(private ingresosService:IngresosService,
-              private modalController:ModalController
+              private modalController:ModalController,
+              private alert:AlertService
   ) {}
 
   ionViewWillEnter(){
@@ -54,6 +56,33 @@ export class Tab1Page {
 
     await modal.present();
 
+  }
+
+  async editar(ingreso:ingresosDTO){
+    const modal = await this.modalController.create({
+      component: IngresosFormularioComponent,
+      showBackdrop: true,
+      backdropDismiss: true,
+      animated: true,
+      canDismiss: true,
+      componentProps: {
+        action: 'Editar',
+        ingreso: ingreso,
+      }
+    })
+
+    modal.onDidDismiss().then( x => this.obtenerIngresos())
+
+    await modal.present();
+  }
+
+  eliminar(ingreso:ingresosDTO){
+    this.ingresosService.eliminarIngreso(ingreso.id).subscribe(res => {
+      this.alert.mostrarMensaje('Eliminado exitosamente','Se ha eliminado el ingreso exitosamente')
+      this.obtenerIngresos();
+    }, err => {
+      this.alert.mostrarMensaje('Error','Ocurrio un error durante el proceso, intenetelo nuevamente')
+    })
   }
 
 }
