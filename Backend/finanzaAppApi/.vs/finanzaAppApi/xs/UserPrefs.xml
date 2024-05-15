@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{0C0C5E50-A70D-430B-B5DC-662298077C5E}|https">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="finanzaAppApi/Controllers/IngresosController.cs">
+    <Files>
+      <File FileName="finanzaAppApi/Controllers/IngresosController.cs" Line="69" Column="62" />
+      <File FileName="finanzaAppApi/Dtos/IngresosDto.cs" Line="14" Column="24" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="finanzaAppApi" expanded="True">
+            <Node name="finanzaAppApi" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Dtos" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.finanzaAppApi PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>
