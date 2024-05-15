@@ -1,0 +1,20 @@
+.contenedor{
+    height: 100vh;
+    width: 100vw;
+    background-image: url("https://www.edenred.mx/hubfs/Media%20Source%202023%20%20%28imagenes%20blog%29/Diciembre/Finanzas%20empresariales%20qu%C3%A9%20son%20y%20c%C3%B3mo%20mejorarlas/finanzas-empresariales-que-son-y-como-mejorarlas.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.login{
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
