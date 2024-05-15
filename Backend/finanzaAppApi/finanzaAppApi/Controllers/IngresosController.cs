@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Security.Claims;
 using finanzaAppApi.Dtos;
 using finanzaAppApi.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -30,9 +31,11 @@ namespace finanzaAppApi.Controllers
             return _context.Ingresos.ToList();
         }
 
-        [HttpGet("Usuario/{id}")]
-        public ActionResult<IEnumerable<Ingresos>> GetIngresosUsuario(int id)
+        [HttpGet("Usuario")]
+        public ActionResult<IEnumerable<Ingresos>> GetIngresosUsuario()
         {
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            var id = Int32.Parse(identity.FindFirst(ClaimTypes.Name)?.Value);
             return _context.Ingresos.Where(ing => ing.UsuarioId == id).ToList();
         }
 
