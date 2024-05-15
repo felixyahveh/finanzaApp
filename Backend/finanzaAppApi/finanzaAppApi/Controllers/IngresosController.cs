@@ -66,7 +66,7 @@ namespace finanzaAppApi.Controllers
 
             ing.Cantidad = ingreso.Cantidad;
             ing.Concepto = ingreso.Concepto;
-            ing.Fecha = ingreso.Fecha;
+            ing.Fecha = DateOnly.FromDateTime( ingreso.Fecha);
             ing.UsuarioId = ingreso.UsuarioId;
 
             _context.Entry(ing).State = EntityState.Modified;
@@ -94,12 +94,14 @@ namespace finanzaAppApi.Controllers
         [HttpPost]
         public ActionResult<Ingresos> PostIngreso(IngresosDto ingreso)
         {
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            var id = Int32.Parse(identity.FindFirst(ClaimTypes.Name)?.Value);
             var ing = new Ingresos
             {
                 Cantidad = ingreso.Cantidad,
                 Concepto = ingreso.Concepto,
-                Fecha = ingreso.Fecha,
-                UsuarioId = ingreso.UsuarioId
+                Fecha = DateOnly.FromDateTime(ingreso.Fecha),
+                UsuarioId = id,
             };
             _context.Ingresos.Add(ing);
             _context.SaveChanges();

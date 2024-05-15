@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { IngresosService } from '../../../services/ingresos.service';
+import { ingresosDTO } from 'src/models/ingresos-dto';
 
 @Component({
   selector: 'app-tabs',
@@ -6,7 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
+  
 
   constructor() {}
+  
 
 }
