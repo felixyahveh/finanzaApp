@@ -1,0 +1,30 @@
+<ion-label style="text-align: center;">{{action}} gasto variable</ion-label>
+
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-input labelPlacement="floating" label="Concepto" type="text" name="concepto" [(ngModel)]="gastoVariable.concepto"></ion-input>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-input labelPlacement="floating" label="Cantidad" type="number" name="concepto" [(ngModel)]="gastoVariable.cantidad"></ion-input>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-datetime presentation="date" [preferWheel]="true" style="height: 20vh;"  [(ngModel)]="gastoVariable.fecha"></ion-datetime>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col sizeMd="6">
+      <ion-button (click)="cerrarModal()">Cancelar</ion-button>
+    </ion-col>
+    <ion-col sizeMd="6">
+      <ion-button (click)="guardar()">Guardar</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

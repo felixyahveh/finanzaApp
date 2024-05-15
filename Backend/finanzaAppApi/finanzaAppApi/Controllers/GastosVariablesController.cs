@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Security.Claims;
 using finanzaAppApi.Dtos;
 using finanzaAppApi.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -30,9 +31,11 @@ namespace finanzaAppApi.Controllers
             return _context.GastosVariables.ToList();
         }
 
-        [HttpGet("Usuario/{id}")]
-        public ActionResult<IEnumerable<GastosVariables>> GetIngresosUsuario(int id)
+        [HttpGet("Usuario")]
+        public ActionResult<IEnumerable<GastosVariables>> GetIngresosUsuario()
         {
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            var id = Int32.Parse(identity.FindFirst(ClaimTypes.Name)?.Value);
             return _context.GastosVariables.Where(ing => ing.UsuarioId == id).ToList();
         }
 
@@ -63,7 +66,7 @@ namespace finanzaAppApi.Controllers
 
             gv.Cantidad = gastosVariable.Cantidad;
             gv.Concepto = gastosVariable.Concepto;
-            gv.Fecha = gastosVariable.Fecha;
+            gv.Fecha = DateOnly.FromDateTime( gastosVariable.Fecha);
             gv.UsuarioId = gastosVariable.UsuarioId;
 
             _context.Entry(gv).State = EntityState.Modified;
@@ -89,14 +92,17 @@ namespace finanzaAppApi.Controllers
 
         // POST: api/Ingresos
         [HttpPost]
-        public ActionResult<GastosVariables> PostIngreso(GastosVariables gatosFijo)
+        public ActionResult<GastosVariables> PostIngreso(GastosVariablesDto gatosFijo)
         {
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            var id = Int32.Parse(identity.FindFirst(ClaimTypes.Name)?.Value);
+
             var gf = new GastosVariables
             {
                 Cantidad = gatosFijo.Cantidad,
                 Concepto = gatosFijo.Concepto,
-                Fecha = gatosFijo.Fecha,
-                UsuarioId = gatosFijo.UsuarioId
+                Fecha = DateOnly.FromDateTime( gatosFijo.Fecha),
+                UsuarioId = id
             };
             _context.GastosVariables.Add(gf);
             _context.SaveChanges();

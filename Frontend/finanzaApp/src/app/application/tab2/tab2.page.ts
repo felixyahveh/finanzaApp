@@ -13,7 +13,7 @@ import { GastosFijosDTO } from 'src/models/gastos-fijos-dto';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-  protected ingresos:ingresosDTO[] = [];
+  protected ingresos:GastosFijosDTO[] = [];
 
   constructor(private gastosFijosService:GastosFijosService,
               private modalController:ModalController,
@@ -78,8 +78,8 @@ export class Tab2Page {
     await modal.present();
   }
 
-  eliminar(ingreso:ingresosDTO){
-    this.gastosFijosService.eliminarIngreso(ingreso.id).subscribe(res => {
+  eliminar(gasto:GastosFijosDTO){
+    this.gastosFijosService.eliminarIngreso(gasto.id).subscribe(res => {
       this.alert.mostrarMensaje('Eliminado exitosamente','Se ha eliminado el ingreso exitosamente')
       this.obtenerGastosFijos();
     }, err => {
