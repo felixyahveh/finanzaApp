@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gQc4JHAjJoRMxPb+1iDUFXpBf8EpJWYhoz54OajO0oB36H+auNnHqTvX3JEP1hLksa3kzlJixlNCVG8qVqaLfA==",
+  "dgSpecHash": "+D5Yc5KYQ+UoBdbWfy8fMIfkt2RgsdKPKEeQNajZ3eKBbV3f4S6S4OSIyIoVQdn97CxHFh/YAdvPJNsfIHHp1Q==",
   "success": true,
-  "projectFilePath": "/Users/felixalanis/Documents/finanzaApp/Backend/finanzaAppApi/finanzaAppApi/finanzaAppApi.csproj",
+  "projectFilePath": "/Users/felixalanis/Desktop/finanzaApp/Backend/finanzaAppApi/finanzaAppApi/finanzaAppApi.csproj",
   "expectedPackageFiles": [
     "/Users/felixalanis/.nuget/packages/entityframework/6.4.4/entityframework.6.4.4.nupkg.sha512",
     "/Users/felixalanis/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",

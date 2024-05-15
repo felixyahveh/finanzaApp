@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/felixalanis/Documents/finanzaApp/Backend/finanzaAppApi/finanzaAppApi/finanzaAppApi.csproj": {}
+    "/Users/felixalanis/Desktop/finanzaApp/Backend/finanzaAppApi/finanzaAppApi/finanzaAppApi.csproj": {}
   },
   "projects": {
-    "/Users/felixalanis/Documents/finanzaApp/Backend/finanzaAppApi/finanzaAppApi/finanzaAppApi.csproj": {
+    "/Users/felixalanis/Desktop/finanzaApp/Backend/finanzaAppApi/finanzaAppApi/finanzaAppApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/felixalanis/Documents/finanzaApp/Backend/finanzaAppApi/finanzaAppApi/finanzaAppApi.csproj",
+        "projectUniqueName": "/Users/felixalanis/Desktop/finanzaApp/Backend/finanzaAppApi/finanzaAppApi/finanzaAppApi.csproj",
         "projectName": "finanzaAppApi",
-        "projectPath": "/Users/felixalanis/Documents/finanzaApp/Backend/finanzaAppApi/finanzaAppApi/finanzaAppApi.csproj",
+        "projectPath": "/Users/felixalanis/Desktop/finanzaApp/Backend/finanzaAppApi/finanzaAppApi/finanzaAppApi.csproj",
         "packagesPath": "/Users/felixalanis/.nuget/packages/",
-        "outputPath": "/Users/felixalanis/Documents/finanzaApp/Backend/finanzaAppApi/finanzaAppApi/obj/",
+        "outputPath": "/Users/felixalanis/Desktop/finanzaApp/Backend/finanzaAppApi/finanzaAppApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/felixalanis/.nuget/NuGet/NuGet.Config"
