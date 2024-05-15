@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Security.Claims;
 using finanzaAppApi.Dtos;
 using finanzaAppApi.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -30,9 +31,11 @@ namespace finanzaAppApi.Controllers
             return _context.GastosFijos.ToList();
         }
 
-        [HttpGet("Usuario/{id}")]
-        public ActionResult<IEnumerable<GastosFijos>> GetIngresosUsuario(int id)
+        [HttpGet("Usuario")]
+        public ActionResult<IEnumerable<GastosFijos>> GetIngresosUsuario()
         {
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            var id = Int32.Parse(identity.FindFirst(ClaimTypes.Name)?.Value);
             return _context.GastosFijos.Where(ing => ing.UsuarioId == id).ToList();
         }
 
@@ -63,7 +66,7 @@ namespace finanzaAppApi.Controllers
 
             gf.Cantidad = gatosFijo.Cantidad;
             gf.Concepto = gatosFijo.Concepto;
-            gf.Fecha = gatosFijo.Fecha;
+            gf.Fecha = DateOnly.FromDateTime(gatosFijo.Fecha);
             gf.UsuarioId = gatosFijo.UsuarioId;
 
             _context.Entry(gf).State = EntityState.Modified;
@@ -91,12 +94,15 @@ namespace finanzaAppApi.Controllers
         [HttpPost]
         public ActionResult<GastosFijos> PostIngreso(GatosFijosDto gatosFijo)
         {
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            var id = Int32.Parse(identity.FindFirst(ClaimTypes.Name)?.Value);
+
             var gf = new GastosFijos
             {
                 Cantidad = gatosFijo.Cantidad,
                 Concepto = gatosFijo.Concepto,
-                Fecha = gatosFijo.Fecha,
-                UsuarioId = gatosFijo.UsuarioId
+                Fecha = DateOnly.FromDateTime(gatosFijo.Fecha),
+                UsuarioId = id
             };
             _context.GastosFijos.Add(gf);
             _context.SaveChanges();
