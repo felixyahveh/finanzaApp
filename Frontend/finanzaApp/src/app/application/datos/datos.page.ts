@@ -10,10 +10,14 @@ export class DatosPage {
   @ViewChild('graficaEstadoFinanciero') protected chartEstadoFinanciero: ElementRef;
   protected graficaEstadoFinanciero: Chart<'pie'>;
 
+  @ViewChild('graficaMovimientosFinancieros') protected chartMovimientosFinancieros: ElementRef;
+  protected graficaMovimientosFinancieros: Chart<'bar'>;
+
   constructor(private elementRef: ElementRef) { }
 
   ngAfterViewInit() {
-    this.crearEstadoFinanciero()
+    this.crearEstadoFinanciero();
+    this.crearMovimientosFinancieros();
   }
 
   crearEstadoFinanciero(){
@@ -22,7 +26,7 @@ export class DatosPage {
         {
           type: 'pie',
           data: {
-            labels:['Ingresos', 'Gastos Fijos', 'Gastos Variables'],
+            labels:[],
             datasets: [
               {
                 label: 'Porcentaje final',
@@ -56,6 +60,43 @@ export class DatosPage {
         }]
       }
     }) */
+  }
+
+  crearMovimientosFinancieros(){
+    if(this.chartMovimientosFinancieros && this.chartMovimientosFinancieros.nativeElement){
+      this.graficaMovimientosFinancieros = new Chart (this.chartMovimientosFinancieros.nativeElement,
+        {
+          type: 'bar',
+          data: {
+            labels: ['Marzo', 'Abril', 'Mayo'],
+            datasets: [
+              {
+                label: 'Ingresos',
+                data: [25000, 21000, 19000],
+                backgroundColor: 'rgb(255, 99, 132)'
+              },
+              {
+                label: 'Gastos Fijos',
+                data: [9500, 9500, 9500],
+                backgroundColor: 'rgb(54, 162, 235)'
+              },
+              {
+                label: 'Gastos Variables',
+                data: [3000, 2700, 4000],
+                backgroundColor: 'rgb(255, 205, 86)'
+              }
+            ],
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        }
+      )
+    }
   }
 
 

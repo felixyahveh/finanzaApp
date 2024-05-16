@@ -11,9 +11,19 @@
     </ion-toolbar>
   </ion-header>
 
-  <div style="height: 50vh;">
+  <ion-label>Reporte de estado financiero</ion-label>
+  <div style="height: 40vh; width: 90vw;">
     <canvas
        #graficaEstadoFinanciero
+       style="height: 30vh;"
+    ></canvas>
+  </div>
+
+  <ion-label>Reporte de movimientos financieros</ion-label>
+  <div>
+    <canvas
+        style="height: 30vh; width: 90vw;"
+       #graficaMovimientosFinancieros
     ></canvas>
   </div>
 </ion-content>
