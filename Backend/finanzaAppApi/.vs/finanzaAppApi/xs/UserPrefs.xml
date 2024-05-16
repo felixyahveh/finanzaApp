@@ -1,19 +1,23 @@
 ﻿<Properties StartupConfiguration="{0C0C5E50-A70D-430B-B5DC-662298077C5E}|https">
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="finanzaAppApi/Controllers/IngresosController.cs">
+  <MonoDevelop.Ide.ItemProperties.finanzaAppApi PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="finanzaAppApi/Controllers/GastosVariablesController.cs">
     <Files>
-      <File FileName="finanzaAppApi/Controllers/IngresosController.cs" Line="69" Column="62" />
-      <File FileName="finanzaAppApi/Dtos/IngresosDto.cs" Line="14" Column="24" />
+      <File FileName="finanzaAppApi/Controllers/IngresosController.cs" Line="38" Column="78" />
+      <File FileName="finanzaAppApi/Dtos/IngresosDto.cs" />
+      <File FileName="finanzaAppApi/Controllers/GastosFijosController.cs" Line="38" Column="78" />
+      <File FileName="finanzaAppApi/Dtos/GatosFijosDto.cs" Line="16" Column="24" />
+      <File FileName="finanzaAppApi/Controllers/GastosVariablesController.cs" Line="124" Column="36" />
+      <File FileName="finanzaAppApi/Dtos/GastosVariablesDto.cs" Line="14" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="finanzaAppApi" expanded="True">
+          <Node name="finanzaAppApi">
             <Node name="finanzaAppApi" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="Dtos" expanded="True" />
@@ -23,5 +27,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.finanzaAppApi PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
 </Properties>
